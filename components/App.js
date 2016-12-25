@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <h1>Sweet Todo List</h1>
-        <TodoInput/>
+        <TodoInput dispatch={this.props.dispatch} />
         <TodoList todos={this.props.todos}/>
       </div>
     )
