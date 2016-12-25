@@ -9,12 +9,19 @@ class TodoInput extends Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
     this.setState({
       inputText: event.target.value
     })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+
+    console.log('submit button clicked')
   }
 
   render() {
@@ -26,7 +33,7 @@ class TodoInput extends Component {
           placeholder="Insert todo"
           value={text}
           onChange={this.handleChange} />
-        <button>Submit</button>
+        <button onClick={this.handleSubmit}>Submit</button>
       </div>
     )
   }

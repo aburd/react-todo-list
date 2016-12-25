@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TodoInput from './TodoInput'
 import TodoList from './TodoList'
+import { connect } from 'react-redux'
 
 class App extends Component {
 
@@ -9,11 +10,15 @@ class App extends Component {
       <div>
         <h1>Sweet Todo List</h1>
         <TodoInput/>
-        <TodoList />
+        <TodoList todos={this.props.todos}/>
       </div>
     )
   }
 
 }
 
-export default App
+function mapStateToProps(state) {
+	return state
+}
+
+export default connect(mapStateToProps)(App)
