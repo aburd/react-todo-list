@@ -4,7 +4,8 @@ module.exports = {
   devtool: 'inline-source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './client/client.js'
+    './client/client.js',
+    './client/style.sass'
   ],
   output: {
     path: require("path").resolve("./dist"),
@@ -25,6 +26,10 @@ module.exports = {
         query: {
           presets: ['react', 'es2015', 'react-hmre']
         }
+      },
+      {
+        test: /\.(scss|sass)$/,
+        loaders: ['style', 'css', 'sass']
       }
     ]
   }

@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import App from '../components/App'
 import configureStore from '../redux/store'
 import { Provider } from 'react-redux'
+require("./style.sass");
 
 let initialState = {
 	todos: [{

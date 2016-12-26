@@ -12,7 +12,7 @@ class TodoList extends Component {
   todoItems(todos) {
   	return todos.map((todo) => {
   		return (
-  			<TodoListItem text={todo.text} id={todo.id} />
+  			<TodoListItem actions={this.props.actions} key={todo.id} text={todo.text} id={todo.id} />
   		)
   	})
   }
